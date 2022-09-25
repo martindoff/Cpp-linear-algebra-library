@@ -90,14 +90,16 @@ The library will also be updated and tested more in depth as I use it in my proj
 
 I was curious to assess the performances of my library against some state-of-the-art linear algebra libraries. Most of them use sophisticated optimisation of the memory architetcture in order to minimise cache misses, e.g. by block factoring the input matrices before performing an operation. Although my goal was not to compete with these libraries, and despite my implementation is quite rudimentary in comparison, I was surprised to see that the performances of my custom library are competitive for low dimensions (matrix sizes below 15) and not too terrible for higher dimensions - staying within an order of magnitude from the state of the art in terms of average CPU time. Of course this is probably insuficient for performance critical applications, but not so bad for rapid developments.
 
-To assess the performances of the present library, the key operations aforementioned in the testing section were run using various linear algebra libraries over a range of problem dimensions. For a given operation, library and problem dimension, 100,000 executions of the operation were conducted on random objects and the average time to completion was recorded. The results are shown in the Figure below for low dimensions and for the matrix inversion operation:
+To assess the performances of the present library, the key operations aforementioned in the testing section were run using various linear algebra libraries over a range of problem dimensions. For a given operation, library and problem dimension, 100,000 executions of the operation were conducted on random objects and the average time to completion was recorded. The results are shown in the Figure below for low dimensions and for the matrix multiplication operation:
+
+![alt text](https://github.com/martindoff/Cpp-linear-algebra-library/blob/main/img/low_dim.png)
 
 As can be seen from the Figure, the custom library is quite competitive in that range. However, state-of-the-art libraries are taking over at higher dimensions:
 
-The custom library is about 3 times slower on average than the fastest linear algebra library tested for high dimensions. 
+![alt text](https://github.com/martindoff/Cpp-linear-algebra-library/blob/main/img/benchmark.png)
 
 ## Future work
 Future developments could involve improving the library to make it run faster on high dimensional problems or extend its capabilities. For example:
-* replacing the container `std::valarray` by plain C-style arrays. I had initially designed the library relying on the `std::vector` container but could divide the average time to completion by about 3 just by replacing the later container by `std::valarray` containers that are more optimised for numerical computations. I would be curious to see what would be the gain (or pain) resulting in resorting to pure arrays for the data members of the `Matrix` and `Vector` classes. 
+* replacing the container `std::valarray` by plain C-style arrays. I had initially designed the library based on the `std::vector` container but could divide the average time to completion by about 3 by replacing the later container by `std::valarray` containers that are more optimised for numerical computations. I would be curious to see what would be the gain (or pain) resulting in resorting to pure arrays for the data members of the `Matrix` and `Vector` classes. 
 * Block decomposition of the input matrices before performing an operation can speed up computations by minimising cache misses. This is an interesting avenue of development for improving the performances of the library.
 * Much more linear algebra operations could be added such as a QR decomposition to solve, e.g. least square problems. 
