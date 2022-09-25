@@ -111,9 +111,9 @@ it offered the perpective of delegating memory management of the classes to the 
 comparing the library performances against state-of-the-art libraries: it seems that the use of the container incurred a substantial overhead. 
 
 I then remembered about the `std::valarray` container, hidden in the depths of the standard library, that was specifically designed for numerical computations. The use of this container is somehow discouraged by the online C++ community - most of the time undeservedly. 
-The truth is that most of the C++ developpers criticising the `std::valarray` container do not work on these numerically intensive applications for which it was designed.
+The truth is that most of the C++ developpers criticising the `std::valarray` container do not work on these numerically intensive applications for which it was designed for.
 
-Beyond the many useful numerical operations that it offers (e.g. the possibility to perform arithmetic operations, sum, norm, etc.), it claims to also optimise the way data is accessed and wrote. 
+Beyond the many useful numerical operations that it offers (e.g. the possibility to perform arithmetic operations, sum, norm, etc.), it claims to also optimise the way data is accessed. 
 Since I had developed my library with the possibility of easily replacing the container used for the data members, I decided it was a good opportunity to see for myself the benefit of `std::valarray` over `std::vector` containers.
 
 And I was not disappointed ! The performance improvement was dramatic, as can be seen on the Figure below:
