@@ -45,7 +45,7 @@ You will first need to set correctly your compiler in the Makefile (if you choos
 ```
 CC = g++-12 
 ```
-But `CC = g++` would work for most user (since I am a macOS user, I have to specify the version of g++ to bypass the clang compiler and use OpenMP). 
+But `CC = g++` would work for most users (since I am a macOS user, I have to specify the version of g++ to bypass the clang compiler and use OpenMP). 
 
 Once set, build:
 ```
