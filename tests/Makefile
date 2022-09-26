@@ -2,7 +2,7 @@
  
 # *****************************************************
 # Target 
-TARGET = main
+TARGET = test_inv
 # Compiler
 CC = g++-12
 
@@ -14,7 +14,7 @@ CC = g++-12
   # -fopenmp    - OpenMP
   # -03         - turn ON level O3 compiler optimization
  
-CFLAGS = -Wall -g -std=c++17 -I ./ -fopenmp -O3 -Wno-sign-compare -DEIGEN_STACK_ALLOCATION_LIMIT=0
+CFLAGS = -Wall -g -std=c++17 -I ../ -fopenmp -O3 -Wno-sign-compare -DEIGEN_STACK_ALLOCATION_LIMIT=0
  
 # ****************************************************
  

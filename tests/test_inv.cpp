@@ -1,7 +1,6 @@
 #include <iostream>
 #include <chrono>
 #include <Eigen/Dense>
-#include "vector.h"
 #include "matrix.h"
 
 template <typename T> Matrix<T> Eigen2Matrix(Eigen::Matrix<T, Eigen::Dynamic, Eigen::Dynamic>);

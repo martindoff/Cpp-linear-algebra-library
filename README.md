@@ -8,8 +8,25 @@ The `Vector` and `Matrix` template classes are based on the `std::valarray`conta
 
 The library can be used for rapid prototyping of C++ projects involving matrix / vector operations and linear algebra when performance is not a key requirement. It can easily be integrated in most projects and used intuitively. 
 
-## Install
+## Built with
 
+* C++
+* g++ compiler 
+* (optional) GNU make
+
+## Getting started
+
+To integrate the library in your project, all you need to do is 
+
+* download the `matrix.h` file and place it in the include path of your project
+* prepend your main file (or any file in which you wish to use the library) with `#include "matrix.h"`
+
+and, voilà! 
+
+## Demo program
+
+
+### Download
 Clone the repository: 
 ```
 git clone https://github.com/martindoff/Cpp-linear-algebra-library.git
@@ -20,10 +37,10 @@ Then:
 cd Cpp-linear-algebra-library
 ```
 
-## Build
+### Build
 
 
-### Makefile
+#### Build with a Makefile
 You will first need to set correctly your compiler in the Makefile (if you choose to compile using GNU make). For example, I personally use g++ version 12 for this project, hence:
 ```
 CC = g++-12 
@@ -39,16 +56,14 @@ To run the example program:
 ./main
 ```
 
-### Command line
+#### Build in command line
 For example, with version 12 of g++, using the C++17 standard, setting compiler optimisation level 03, using OpenMP, and including the library to main: 
 
 ```
 g++-12 -Wall -g -std=c++17 -I ./ -fopenmp -O3 main.cpp matrix.cpp vector.cpp -o main
 ```
-### Integration in your project
-The only required files are: `vector.h`, `matrix.h`, `vector.cpp`, `matrix.cpp`, so you can just copy paste them and link them to your project.
 
-## Demo program
+### Usage
 
 The `main.cpp` file contains a demo program that shows the usage for most operations offered by this library. It can serve as a tutorial to use the library. For example, to create a random matrix of `double` of size `2-by-3`: 
 

@@ -1,6 +1,5 @@
 #include <iostream>
 #include <limits>
-#include "vector.h"
 #include "matrix.h"
  
 //using Eigen::MatrixXd;

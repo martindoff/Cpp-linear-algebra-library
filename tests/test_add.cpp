@@ -1,7 +1,6 @@
 #include <iostream>
 #include <chrono>
 #include <Eigen/Dense>
-#include "vector.h"
 #include "matrix.h"
 
 template <typename T> Matrix<T> Eigen2Matrix(Eigen::Matrix<T, Eigen::Dynamic, Eigen::Dynamic>);
@@ -41,7 +40,7 @@ template <typename T> Vector<T> Eigen2Vector(Eigen::Matrix<T, Eigen::Dynamic, Ei
 int main()
 {
 constexpr int N_experiment = 10000; 
-constexpr int N = 800;  // dimension of matrix 
+constexpr int N = 20;  // dimension of matrix 
 auto times_custom = std::chrono::microseconds::zero().count();
 auto times_eig = times_custom; 
 int count = 0; 
