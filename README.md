@@ -45,7 +45,7 @@ You will first need to set correctly your compiler in the Makefile (if you choos
 ```
 CC = g++-12 
 ```
-But `CC = g++` would call your default compiler associated with g++.
+But `CC = g++` would work for most user (since I am a macOS user, I have to specify the version of g++ to bypass the clang compiler and use OpenMP). 
 
 Once set, build:
 ```
@@ -57,12 +57,14 @@ To run the example program:
 ```
 
 #### Build in command line
-For example, with version 12 of g++, using the C++17 standard, setting compiler optimisation level 03, using OpenMP, and including the library to main: 
+For example, with version 12 of g++, using the C++17 standard, setting compiler optimisation level 03, using OpenMP (parallelisation), and including the library to main: 
 
 ```
 g++-12 -Wall -g -std=c++17 -I ./ -fopenmp -O3 main.cpp matrix.cpp vector.cpp -o main
 ```
 
+The same remark as above applies for the version of the compiler: the command `g++` will work for most users.
+ 
 ### Usage
 
 The `main.cpp` file contains a demo program that shows the usage for most operations offered by this library. It can serve as a tutorial to use the library. For example, to create a random matrix of `double` of size `2-by-3`: 
@@ -99,6 +101,22 @@ The tests can be found in the `test/` directory  and consist in a comparison wit
 
 The library will also be updated and tested as I use it in my projects. 
 
+### Example
+ 
+To run a test (e.g. matrix inversion), modify the target in the Makefile accordingly:
+
+```
+target = test_inv()
+```
+
+When in the `Cpp-linear-algebra-library` directory, type:
+
+```
+(cd tests\ && make)
+(cd tests\ && ./test_inv)
+```
+
+
 ## Benchmarking
 
 I was curious to assess the performances of my library against state-of-the-art linear algebra libraries. Most of these use sophisticated optimisation of the memory architetcture in order to minimise cache misses, e.g. by block factoring the input matrices before performing an operation. Although my goal was not to compete with these libraries, and despite the present implementation is quite rudimentary in comparison, I was surprised to see that the performances of my custom library are competitive at low dimensions (matrix sizes below 15) and not too bad at higher dimensions - staying within an order of magnitude from the state of the art in terms of average CPU time. Of course this is probably insuficient for performance-critical applications, but not so bad for other applications.
@@ -113,7 +131,7 @@ As can be seen from the Figure, the custom library is quite competitive in that 
 
 ## Using compiler optimisation
 
-Compiler optimisation can accelerate computations dramatically. The following flags were added to the Makefile: `-fopenmp` and `-O3`. 
+Compiler optimisation and parallelisation can accelerate computations dramatically. The following flags were added to the Makefile: `-fopenmp` (parallelisation) and `-O3` (optimisation). 
 
 The impact of adding them is shown in the Figure below where a clear improvement is observed by comparison to running the code without compiler optimisation:
 

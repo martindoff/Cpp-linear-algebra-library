@@ -11,10 +11,10 @@ CC = g++-12
   #  -Wall      - turn on most compiler warnings
   # -std=c++17  - turn on C++17 standard
   # -I          - include path ("./" for current path)
-  # -fopenmp    - OpenMP
+  # -fopenmp    - OpenMP: parallelisation
   # -03         - turn ON level O3 compiler optimization
  
-CFLAGS = -Wall -g -std=c++17 -I ./ -fopenmp -O3 -Wno-sign-compare -DEIGEN_STACK_ALLOCATION_LIMIT=0
+CFLAGS = -Wall -g -std=c++17 -I ./ -fopenmp -O3 -Wno-sign-compare
  
 # ****************************************************
  
