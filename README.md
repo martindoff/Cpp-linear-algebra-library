@@ -154,7 +154,7 @@ And I was not disappointed ! The performance improvement was dramatic, as can be
 ![alt text](https://github.com/martindoff/Cpp-linear-algebra-library/blob/main/img/valarray.png)
 
 The Figure was obtained by running the exact same algorithms but with different data storage on the same problems. It
-appears clearly that `std::valarray` outperforms `std::vector` in terms of CPU time (by about a factor of 3), showing that the latter should 
+appears clearly that `std::valarray` outperforms `std::vector` in terms of CPU time (by about a factor of 3), showing that the former should 
 be favored for computationally intensive tasks. 
 
 
